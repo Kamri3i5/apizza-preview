@@ -1,0 +1,19 @@
+# Шаг 1: Перейди в папку проекта
+cd c:\Users\User\Downloads\ExpandingMenu-main\premium-pizza
+
+# Шаг 2: Инициализируй Git (если еще не сделано)
+git init
+
+# Шаг 3: Добавь все файлы
+git add .
+
+# Шаг 4: Сделай первый коммит
+git commit -m "Initial commit: Pizza bot ready for deployment"
+
+# Шаг 5: Подключи свой GitHub репозиторий
+# ЗАМЕНИ URL на тот, что скопировал с GitHub!
+git remote add origin https://github.com/твой-username/premium-pizza-bot.git
+
+# Шаг 6: Загрузи код на GitHub
+git branch -M main
+git push -u origin main

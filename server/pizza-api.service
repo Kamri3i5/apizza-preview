@@ -1,0 +1,15 @@
+[Unit]
+Description=American Pizza API Server
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/var/www/premium-pizza/server
+Environment="PATH=/var/www/premium-pizza/server/venv/bin"
+ExecStart=/var/www/premium-pizza/server/venv/bin/python main.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

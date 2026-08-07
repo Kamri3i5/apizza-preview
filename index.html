@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>American Pizza - Authentic Pizza, Made Fresh Daily</title>
+    <meta
+      name="description"
+      content="Premium handcrafted pizzas with authentic Italian recipes and fresh ingredients. Full menu with sizes and prices in Tashkent."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body id="app-body">
+
+    <header class="header" id="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <span class="logo-icon"><img src="images/logo.jpeg" alt="logo"></span>
+            <span class="logo-text">American Pizza</span>
+          </div>
+          <nav class="nav" id="nav">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#menu" class="nav-link">Menu</a>
+            <a href="#story" class="nav-link">Our Story</a>
+            <a href="#delivery" class="nav-link">Delivery</a>
+            <a href="#deals" class="nav-link">Deals</a>
+          </nav>
+          <div class="language-dropdown">
+            <button class="lang-toggle" id="langToggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="langMenu">
+              <span class="lang-icon">🌐</span>
+              <span class="lang-text">Язык</span>
+              <span class="lang-arrow">▼</span>
+            </button>
+            <div class="lang-menu" id="langMenu">
+              <div class="lang-option" data-lang="ru">
+                <span class="lang-flag">🇷🇺</span>
+                <span class="lang-name">Русский</span>
+                <span class="lang-check">✓</span>
+              </div>
+              <div class="lang-option" data-lang="en">
+                <span class="lang-flag">en</span>
+                <span class="lang-name">English</span>
+                <span class="lang-check">✓</span>
+              </div>
+              <div class="lang-option" data-lang="uz">
+                <span class="lang-flag">🇺🇿</span>
+                <span class="lang-name">O'zbekcha</span>
+                <span class="lang-check">✓</span>
+              </div>
+            </div>
+          </div>
+          <div class="header-actions">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-controls="mobileSideMenu" aria-expanded="false">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+<div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+<aside class="mobile-side-menu" id="mobileSideMenu" aria-label="Mobile navigation">
+
+  <div class="mobile-side-header">
+    <div class="mobile-side-logo">
+      American<br>Pizza
+    </div>
+
+    <button
+      type="button"
+      class="mobile-side-close"
+      id="mobileMenuClose"
+      aria-label="Close menu"
+    >
+      ×
+    </button>
+  </div>
+
+  <nav class="mobile-side-nav">
+
+    <a href="#home" class="mobile-side-link" data-i18n="nav_home">
+      Главная
+    </a>
+
+    <a href="#menu" class="mobile-side-link" data-i18n="nav_menu">
+      Меню
+    </a>
+
+    <a href="#story" class="mobile-side-link" data-i18n="nav_story">
+      О нас
+    </a>
+
+    <a href="#delivery" class="mobile-side-link" data-i18n="nav_delivery">
+      Доставка
+    </a>
+
+    <a href="#deals" class="mobile-side-link" data-i18n="nav_deals">
+      Акции
+    </a>
+
+  </nav>
+
+  <div class="mobile-side-footer">
+
+    <div class="mobile-side-language" id="mobileLanguageSelector">
+
+      <button type="button" data-lang="ru">
+        RU
+      </button>
+
+      <button type="button" data-lang="uz">
+        UZ
+      </button>
+
+      <button type="button" data-lang="en">
+        EN
+      </button>
+
+    </div>
+
+    <button
+      type="button"
+      class="mobile-side-order"
+      onclick="scrollToSection('menu')"
+      data-i18n="hero_menu"
+    >
+      Смотреть меню
+    </button>
+
+  </div>
+
+</aside>
+
+    <section class="hero" id="home">
+      <div class="hero-bg">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title" data-i18n="hero_title">
+            Authentic Italian Pizza<br />Made Fresh Daily
+          </h1>
+          <p class="hero-subtitle" data-i18n="hero_subtitle">
+            Hand-crafted with premium ingredients and passion
+          </p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="scrollToSection('menu')" data-i18n="hero_menu">
+              See Menu
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll Down</span>
+        <div class="scroll-arrow">↓</div>
+      </div>
+    </section>
+
+
+    <section class="signature-pizzas" id="signature">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="signature_title">Our Signature Pizzas</h2>
+          <p class="section-subtitle" data-i18n="signature_subtitle">
+            Handpicked favorites that keep our customers coming back
+          </p>
+        </div>
+        <div class="pizzas-grid">
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="menu-section" id="menu">
+        <div class="container-fluid">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="menu_title">Full Menu</h2>
+                <p class="section-subtitle" data-i18n="menu_subtitle">Explore our complete selection of handcrafted pizzas</p>
+            </div>
+
+            <div class="menu-layout">
+
+                <div class="menu-content" style="grid-column: 1 / -1;">
+                    <div class="menu-grid" id="menuGrid">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="brand-story" id="story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2 class="section-title" data-i18n="story_title">Our Story: Passion Meets Tradition</h2>
+                    <div class="story-paragraphs">
+                        <p data-i18n="story_p1">At American Pizza, we believe that great pizza starts with great dough. Every morning, our master bakers hand-knead fresh dough using a time-honored recipe passed down through generations.</p>
+                        <p data-i18n="story_p2">We source only the finest ingredients: San Marzano tomatoes from Italy, premium mozzarella, and fresh vegetables delivered daily from local farms. Our commitment to quality means never compromising on taste.</p>
+                        <p data-i18n="story_p3">From our traditional brick oven to your table, every pizza is crafted with love, passion, and respect for authentic Italian tradition. This is more than food—it's an experience we're proud to share with you.</p>
+                    </div>
+                    
+                    <div class="story-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">🌾</span>
+                            <span class="feature-text" data-i18n="story_f1">Fresh Daily Dough</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🇮🇹</span>
+                            <span class="feature-text" data-i18n="story_f2">Authentic Italian Recipe</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🔥</span>
+                            <span class="feature-text" data-i18n="story_f3">Brick Oven Baked</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-images">
+                    <div class="story-image-grid">
+                        <div class="story-img story-img-1">
+                            <img src="images/story_user_custom.jpg" alt="Wood Fired Pizza Oven" style="width:100%; height:100%; object-fit:cover; border-radius:var(--radius-md);">
+                        </div>
+                        <div class="story-img story-img-2">
+                             <img src="images/story_oven.jpg" alt="Traditional Brick Oven" style="width:100%; height:100%; object-fit:cover; border-radius:var(--radius-md);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="delivery-section" id="delivery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="delivery_title">Fast Delivery to Your Door</h2>
+                <p class="section-subtitle" data-i18n="delivery_subtitle">We deliver hot, fresh pizza across Tashkent</p>
+            </div>
+            <div class="delivery-content">
+                <div class="delivery-map">
+<iframe 
+                        src="https://maps.google.com/maps?q=Park+In+Mall,Tashkent&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        width="100%" 
+                        height="400" 
+                        style="border:0; border-radius: var(--radius-md);" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="delivery-info">
+                    <div class="info-card">
+                        <div class="info-icon">⏱️</div>
+                        <h3 data-i18n="delivery_time_title">Delivery Time</h3>
+                        <p data-i18n="delivery_time_val">30-45 minutes</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">💰</div>
+                        <h3 data-i18n="delivery_min_title">Minimum Order</h3>
+                        <p>50,000 <span data-i18n="currency">сум</span></p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🚚</div>
+                        <h3 data-i18n="delivery_fee_title">Delivery Fee</h3>
+                        <p><span data-i18n="delivery_free_cond">Free over 100,000 сум</span><br><small data-i18n="delivery_fee_val">Otherwise 10,000 сум</small></p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📞</div>
+                        <h3 data-i18n="delivery_contact">Contact Us</h3>
+                        <p>+998 (33) 105-10-10</p>
+                    </div>
+                    </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="deals-section" id="deals">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="sets_title">Special Deals & Combos</h2>
+          <p class="section-subtitle" data-i18n="sets_subtitle">
+            Save more when you order our combo deals
+          </p>
+        </div>
+<div class="deals-grid">
+
+          <div class="deal-card" style="padding:0; overflow:hidden;" data-deal-id="calzone" data-deal-price="110000">
+            <img src="images/deal_calzone.jpg" alt="Calzone Set" style="width:100%; height:240px; object-fit:cover;">
+            <div style="padding:24px;">
+              <h3 class="deal-title" data-i18n="deal_calzone_title">Calzone Set</h3>
+              <p class="deal-description" data-i18n="deal_calzone_desc">
+                Calzone - 2 pcs, Fries - 2 servings, Fanta 0.5 - 2 pcs, Ketchup - 2 pcs
+              </p>
+              <div class="deal-order-row">
+                <span class="price-new">110,000 <span data-i18n="currency">сум</span></span>
+                <button type="button" class="btn-add-order" data-add-deal>+ <span data-i18n="pizza_add_order">В заказ</span></button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="deal-card" style="padding:0; overflow:hidden;" data-deal-id="combo2" data-deal-price="169000">
+            <img src="images/deal_combo_two.jpg" alt="Combo for Two" style="width:100%; height:240px; object-fit:cover;">
+            <div style="padding:24px;">
+              <h3 class="deal-title" data-i18n="deal_combo2_title">Combo for Two</h3>
+              <p class="deal-description" data-i18n="deal_combo2_desc">
+                Americano 35cm, Coca-Cola 1L, Sauce x2, Country Style Potatoes x2
+              </p>
+              <div class="deal-order-row">
+                <span class="price-new">169,000 <span data-i18n="currency">сум</span></span>
+                <button type="button" class="btn-add-order" data-add-deal>+ <span data-i18n="pizza_add_order">В заказ</span></button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="deal-card deal-featured" style="padding:0; overflow:hidden; border: 3px solid var(--primary-red);" data-deal-id="mega" data-deal-price="119000">
+            <div class="deal-badge">Top Choice</div>
+            <img src="images/deal_mega_combo.jpg" alt="Mega Combo" style="width:100%; height:240px; object-fit:cover;">
+            <div style="padding:24px;">
+              <h3 class="deal-title" data-i18n="deal_mega_title">Mega Combo</h3>
+              <p class="deal-description" data-i18n="deal_mega_desc">
+                Texas, Pennsylvania, Pepperoni Pizzas
+              </p>
+              <div class="deal-order-row">
+                <span class="price-new">119,000 <span data-i18n="currency">сум</span></span>
+                <button type="button" class="btn-add-order" data-add-deal>+ <span data-i18n="pizza_add_order">В заказ</span></button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="deal-card" style="padding:0; overflow:hidden;" data-deal-id="super" data-deal-price="110000">
+            <img src="images/deal_super_box.jpg" alt="Super Box" style="width:100%; height:240px; object-fit:cover;">
+            <div style="padding:24px;">
+              <h3 class="deal-title" data-i18n="deal_super_title">Super Box</h3>
+              <p class="deal-description" data-i18n="deal_super_desc">
+                Caesar 30cm, Fries x2, Fanta 0.5 x2, Ketchup x2
+              </p>
+              <div class="deal-order-row">
+                <span class="price-new">110,000 <span data-i18n="currency">сум</span></span>
+                <button type="button" class="btn-add-order" data-add-deal>+ <span data-i18n="pizza_add_order">В заказ</span></button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="deal-card" style="padding:0; overflow:hidden;" data-deal-id="megaxit" data-deal-price="199000">
+            <img src="images/deal_mega_hit.jpg" alt="Mega Hit" style="width:100%; height:240px; object-fit:cover;">
+            <div style="padding:24px;">
+              <h3 class="deal-title" data-i18n="deal_megaxit_title">Mega Xit</h3>
+              <p class="deal-description" data-i18n="deal_megaxit_desc">
+                Hawaii Pizza, Burger x2, Fries x2, Coca-Cola 0.5 x2, Ketchup
+              </p>
+              <div class="deal-order-row">
+                <span class="price-new">199,000 <span data-i18n="currency">сум</span></span>
+                <button type="button" class="btn-add-order" data-add-deal>+ <span data-i18n="pizza_add_order">В заказ</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="drinks-section" id="drinks">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="drinks_title">Напитки</h2>
+          <p class="section-subtitle" data-i18n="drinks_subtitle">Освежающие напитки к вашей пицце</p>
+        </div>
+        <div class="deals-grid">
+
+          <div class="deal-card" style="padding:0; overflow:hidden;" data-deal-id="drinks" data-deal-price="22000">
+            <img src="images/drink_assorted.jpg" alt="Drinks" style="width:100%; height:240px; object-fit:cover;">
+            <div style="padding:24px;">
+              <h3 class="deal-title" data-i18n="deal_drinks_title">Drinks</h3>
+              <p class="deal-description" data-i18n="deal_drinks_desc">
+                Cola / Fanta / Sprite 1.5L
+              </p>
+              <div class="deal-order-row">
+                <span class="price-new">22,000 <span data-i18n="currency">сум</span></span>
+                <button type="button" class="btn-add-order" data-add-deal>+ <span data-i18n="pizza_add_order">В заказ</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <span class="logo-icon"><img src="images/logo.jpeg" alt="logo"></span>
+              <span class="logo-text">American Pizza</span>
+            </div>
+            <p class="footer-tagline" data-i18n="footer_tagline">Best pizza in town!</p>
+            <p class="footer-description">
+              Authentic Italian pizza made with passion and premium ingredients
+              since 2013.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-title" data-i18n="footer_quick_links">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="#home" data-i18n="nav_home">Home</a></li>
+              <li><a href="#menu" data-i18n="nav_menu">Menu</a></li>
+              <li><a href="#story" data-i18n="nav_story">About Us</a></li>
+              <li><a href="#delivery" data-i18n="nav_delivery">Delivery</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-title" data-i18n="footer_contact">Contact</h4>
+            <ul class="footer-contact">
+              <li>📞 +998 (33) 105-10-10</li>
+              <li>✉️ americanpizza1010@gmail.com</li>
+              <li>📍 Toshkent, Alisher Navoi ko'chasi 33A | Park In Mall 4-qavat</li>
+              <li>🕐 24/7</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-title" data-i18n="footer_follow">Follow Us</h4>
+            <div class="social-links">
+              <a href="#" class="social-link">📘 Facebook</a>
+              <a href="#" class="social-link">📷 Instagram</a>
+              <a href="#" class="social-link">📱 Telegram</a>
+            </div>
+            <div class="qr-code">
+              <div class="qr-placeholder" style="padding: 0; overflow: hidden;">
+                <img src="images/1qr.png" alt="Scan for App" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <p style="text-align: center; font-size: 0.75rem; margin-top: 8px; color: rgba(255,255,255,0.7);" data-i18n="footer_download">Scan for App</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p data-i18n="footer_copyright">&copy; 2025 American Pizza. All rights reserved. Created with <3 by Jasur Engineers</p>
+          <div class="quality-marks">
+            <span data-i18n="footer_quality">✓ Quality Certified</span>
+            <span data-i18n="footer_delivery">✓ Fast Delivery</span>
+            <span data-i18n="footer_support">✓ Support</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <nav class="quick-nav" id="quickNav" aria-label="Быстрая навигация по меню">
+        <a href="#menu" class="quick-nav-link active" data-target="menu">
+            <span class="quick-nav-icon">🍕</span>
+            <span class="quick-nav-label" data-i18n="quicknav_pizza">Пицца</span>
+        </a>
+        <a href="#deals" class="quick-nav-link" data-target="deals">
+            <span class="quick-nav-icon">🍱</span>
+            <span class="quick-nav-label" data-i18n="quicknav_sets">Сеты</span>
+        </a>
+        <a href="#drinks" class="quick-nav-link" data-target="drinks">
+            <span class="quick-nav-icon">🥤</span>
+            <span class="quick-nav-label" data-i18n="quicknav_drinks">Напитки</span>
+        </a>
+    </nav>
+
+    <div class="floating-cart" id="floatingCart">
+        <button type="button" class="floating-cart-btn" id="floatingCartBtn" aria-label="Открыть заказ">
+            🛒
+            <span class="floating-cart-count" id="floatingCartCount">0</span>
+        </button>
+    </div>
+
+    <div class="order-panel-overlay" id="orderPanelOverlay"></div>
+    <div class="order-panel" id="orderPanel">
+        <div class="order-panel-header">
+            <h3 data-i18n="order_title">Ваш заказ</h3>
+            <button type="button" class="order-panel-close" id="orderPanelClose" aria-label="Закрыть">×</button>
+        </div>
+        <div class="order-panel-list" id="orderPanelList"></div>
+        <div class="order-panel-footer">
+            <div class="order-panel-total">
+                <span data-i18n="order_total">Итого</span>:
+                <strong id="orderPanelTotal">0 сум</strong>
+            </div>
+
+            <form id="checkoutForm" class="checkout-form" novalidate>
+                <div class="form-group">
+                    <label class="form-label" for="checkoutName" data-i18n="checkout_name">Имя</label>
+                    <input type="text" id="checkoutName" class="form-input" data-i18n-placeholder="checkout_name_placeholder" placeholder="Ваше имя" autocomplete="name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="checkoutPhone" data-i18n="checkout_phone">Телефон</label>
+                    <input type="tel" id="checkoutPhone" class="form-input" placeholder="+998 90 123 45 67" autocomplete="tel" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="checkoutAddress" data-i18n="checkout_address">Адрес доставки</label>
+                    <input type="text" id="checkoutAddress" class="form-input" data-i18n-placeholder="checkout_address_placeholder" placeholder="Улица, дом, квартира" autocomplete="street-address" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="checkoutComment" data-i18n="checkout_comment">Комментарий</label>
+                    <input type="text" id="checkoutComment" class="form-input" data-i18n-placeholder="checkout_comment_placeholder" placeholder="Домофон, этаж и т.д. (необязательно)">
+                </div>
+
+                <div class="form-group">
+                    <span class="form-label" data-i18n="payment_title">Выберите способ оплаты</span>
+                    <div class="payment-options" id="paymentOptions">
+                        <label class="payment-option">
+                            <input type="radio" name="paymentMethod" value="cash" checked>
+                            <span data-i18n="payment_cash">Наличные</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="paymentMethod" value="payme">
+                            <span>Payme</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="paymentMethod" value="click">
+                            <span>Click</span>
+                        </label>
+                    </div>
+                </div>
+
+                <p class="checkout-message" id="checkoutMessage" hidden></p>
+
+                <button type="submit" class="btn-checkout-submit" id="checkoutSubmitBtn">
+                    <span data-i18n="cart_checkout">Оформить заказ</span>
+                </button>
+            </form>
+
+            <a class="btn-call" href="tel:+998331051010">
+                📞 <span data-i18n="order_call_btn">Позвонить и заказать</span> · +998 (33) 105-10-10
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
